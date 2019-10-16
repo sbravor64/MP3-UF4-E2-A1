@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Llapis implements Comparable<Llapis>{
     private int color;
@@ -27,6 +24,18 @@ public class Llapis implements Comparable<Llapis>{
         this.grosor=grosor;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Llapis llapis = (Llapis) o;
+        return color == llapis.color;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(color);
+    }
 
     @Override
     public int compareTo(Llapis llapis) {
