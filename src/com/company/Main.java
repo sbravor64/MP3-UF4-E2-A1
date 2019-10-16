@@ -1,5 +1,6 @@
 package com.company;
 
+import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -36,7 +37,7 @@ public class Main {
 
         Collections.sort(llista_llapis, coleccionColor);
 
-        System.out.println("Ordenados por Color");
+        System.out.println("Ordenados por Color (Comparator)");
         for(Llapis datos : llista_llapis){
             System.out.println("Color: " + datos.getColor());
         }
@@ -44,10 +45,16 @@ public class Main {
 
         Collections.sort(llista_llapis, coleccionGrosor);
         System.out.println();
-        System.out.println("Ordenados por Grosor");
+        System.out.println("Ordenados por Grosor (Comparator)");
         for(Llapis datos : llista_llapis){
             System.out.println("Grosor: " + datos.getGrosor());
         }
 
+        Collections.sort(llista_llapis);
+        System.out.println();
+        System.out.println("Ordenados por Grosor (Comparable)");
+        for(Llapis datos : llista_llapis){
+            System.out.println("Grosor: " + datos.getGrosor());
+        }
     }
 }
